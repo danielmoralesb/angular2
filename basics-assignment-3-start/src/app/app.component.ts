@@ -17,12 +17,10 @@ export class AppComponent {
   count = 0;
   counter = [];
 
-  toggleText(event: Event) {
-    console.log(event);
+  toggleText() {
     this.showText = !this.showText;
     this.count++;
-    this.counter.push(this.count);
-    console.log('this is the count: ' + this.count);
-    console.log('bigger than 4: ' ? this.counter.length > 4 : false);
+    // this.counter.push(this.count);
+    this.counter.push(new Date());
   }
 }

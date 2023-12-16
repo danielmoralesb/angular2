@@ -28,7 +28,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <button class="btn btn-primary" (click)="toggleText($event)">
+      <button class="btn btn-primary" (click)="toggleText()">
         Display Details
       </button>
       <p [ngClass]="{ show: showText }">
@@ -38,12 +38,21 @@
         expedita!
       </p>
       <ul>
-        <li
+        <!-- <li
           *ngFor="let count of counter"
           [ngStyle]="{
             backgroundColor: this.count >= 5 ? 'blue' : 'transparent'
           }"
           [ngClass]="{ white: this.count >= 5 }"
+        >
+          {{ count }}
+        </li> -->
+        <li
+          *ngFor="let count of counter; let i = index"
+          [ngStyle]="{
+            backgroundColor: i >= 4 ? 'blue' : 'transparent'
+          }"
+          [ngClass]="{ white: i >= 4 }"
         >
           {{ count }}
         </li>
